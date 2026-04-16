@@ -24,3 +24,20 @@ Site institucional desenvolvido para a marca Papel de Axe, com foco em identidad
 ```bash
 npm install
 npm run dev
+
+## 🌐 Deploy
+
+Projeto preparado para deploy em plataformas como:
+
+- Vercel
+- Hostinger
+- Netlify
+
+## 📌 Status
+
+🚧 Em desenvolvimento
+
+## 👨‍💻 Autor
+
+Thiago Aneas  
+[LinkedIn](https://www.linkedin.com/in/thiagorodrigues-ti)
