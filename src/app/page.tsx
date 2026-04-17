@@ -21,59 +21,31 @@ export default function Home() {
         <div className="soft-grid absolute inset-0 opacity-30" />
         <div className="absolute left-[-8rem] top-[-5rem] h-64 w-64 rounded-full bg-azure/15 blur-3xl" />
         <div className="absolute right-[-6rem] top-12 h-72 w-72 rounded-full bg-rose/12 blur-3xl" />
-        <div className="shell relative grid gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
-          <div className="space-y-8">
-            <div className="inline-flex items-center gap-3 rounded-full border border-deep/10 bg-white/70 px-5 py-2.5 text-[0.72rem] font-semibold uppercase tracking-[0.3em] text-deep/78">
-              <span className="h-2.5 w-2.5 rounded-full bg-[linear-gradient(135deg,#11b3f1,#e71f99)] shadow-[0_0_18px_rgba(231,31,153,0.35)]" />
-              Papelaria personalizada com delicadeza e presenca
-            </div>
+        <div className="shell relative grid gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+  <div className="lg:col-span-2">
+    <div className="flex w-full animate-fadeUp items-center justify-center gap-3 rounded-full border border-deep/10 bg-white/80 backdrop-blur-md px-6 py-3 text-sm font-semibold uppercase tracking-[0.25em] text-deep/80 leading-none">
+     <span className="h-2.5 w-2.5 rounded-full bg-[linear-gradient(135deg,#11b3f1,#e71f99)] shadow-[0_0_18px_rgba(231,31,153,0.35)] animate-pulseGlow" />
+      Papelaria personalizada com delicadeza e presenca
+    </div>
+  </div>
+
+  <div className="space-y-8">
 
             <div className="space-y-5">
-              <p className="text-sm uppercase tracking-[0.26em] text-deep/42">Papel de Axe</p>
-              <h1 className="max-w-4xl text-balance text-[3rem] font-semibold leading-[0.92] text-deep sm:text-[4rem] xl:text-[4.9rem]">
-                Pecas afetivas para{" "}
+               <h1 className="max-w-4xl text-balance text-[3rem] font-semibold leading-[0.92] text-deep sm:text-[4rem] xl:text-[4.9rem]">
+                Peças afetivas para{" "}
                 <span className="headline">
-                  registrar historias, presentear com significado e levar mais beleza
-                  ao seu axe.
+                  registrar histórias, presentear com significado e levar mais beleza
+                  ao seu axé.
                 </span>
               </h1>
               <p className="max-w-xl text-[1.04rem] leading-8 text-deep/68 sm:text-[1.08rem]">
-                Cadernos, planners, kits e personalizados feitos sob encomenda para
-                umbanda e candomble, com acabamento caprichado, identidade autoral e
-                atendimento proximo em cada detalhe.
+                Cadernos, planners, bloco de anotações, lembranças de saída de santo, 
+                batismo, formatura, kits e personalizados feitos sob encomenda para umbanda e candomblé, 
+                com acabamento profissional, identidade autoral e atendimento próximo em cada detalhe.
               </p>
             </div>
-
-            <div className="flex flex-col gap-4 sm:flex-row">
-              <a
-                className="inline-flex min-h-12 items-center justify-center rounded-full bg-[linear-gradient(135deg,#11b3f1,#a61598,#e71f99)] px-7 py-3 text-sm font-semibold text-white shadow-glow transition hover:-translate-y-0.5"
-                href="#produtos"
-              >
-                Ver colecoes em destaque
-              </a>
-              <a
-                className="inline-flex min-h-12 items-center justify-center rounded-full border border-deep/12 bg-white/70 px-7 py-3 text-sm font-semibold text-deep transition hover:-translate-y-0.5 hover:bg-white"
-                href={buildWhatsAppUrl(
-                  "Oi Papel de Axe! Quero saber mais sobre os personalizados."
-                )}
-                rel="noreferrer"
-                target="_blank"
-              >
-                Pedir informacoes no WhatsApp
-              </a>
-            </div>
-
-            <div className="grid gap-4 md:grid-cols-3">
-              {heroNotes.map((item) => (
-                <article
-                  className="premium-card rounded-[1.45rem] border border-deep/10 bg-white/65 p-5"
-                  key={item.title}
-                >
-                  <h2 className="text-base font-semibold text-deep">{item.title}</h2>
-                  <p className="mt-2 text-sm leading-7 text-deep/64">{item.text}</p>
-                </article>
-              ))}
-            </div>
+                      
           </div>
 
           <div className="premium-card overflow-hidden rounded-[2.35rem] border border-deep/10 bg-white/68 p-4 sm:p-5">
@@ -89,14 +61,14 @@ export default function Home() {
                       Personalizados com identidade, afeto e capricho.
                     </h2>
                     <p className="text-base leading-8 text-deep/70">
-                      Uma experiencia de compra mais proxima para transformar sua ideia em
-                      uma peca especial e cheia de significado.
+                      Uma experiência de compra mais próxima para transformar sua ideia em
+                      uma peça especial e cheia de significado.
                     </p>
                   </div>
                   <ul className="grid gap-3 text-sm text-deep/78">
                     <li className="flex gap-3">
                       <span className="mt-2 h-2 w-2 rounded-full bg-lime" />
-                      <span>Pecas para uso pessoal, presentes e casas de axe</span>
+                      <span>Peças para uso pessoal, presentes e casas de axé</span>
                     </li>
                     <li className="flex gap-3">
                       <span className="mt-2 h-2 w-2 rounded-full bg-azure" />
@@ -117,19 +89,20 @@ export default function Home() {
                   </span>
                   <h3 className="mt-3 text-2xl font-semibold">Cadernos e planners</h3>
                   <p className="mt-3 text-sm leading-7 text-white/76">
-                    Organizacao bonita para estudos, giras, firmezas e presentes
+                    Organização bonita para estudos, giras, firmezas e presentes
                     com significado.
                   </p>
                 </article>
                 <article className="premium-card overflow-hidden rounded-[1.8rem] border border-deep/10 bg-white p-5">
-                  <div className="relative mx-auto aspect-[4/3] w-full max-w-[18rem]">
-                    <Image
-                      alt="Mockup Papel de Axe"
-                      className="object-contain"
-                      fill
-                      sizes="(max-width: 1024px) 100vw, 26vw"
-                      src="/imagens/mockup 1.png"
-                    />
+                  <div className="mx-auto flex aspect-[4/3] w-full max-w-[18rem] items-center justify-center">
+                  <Image
+                    alt="Mockup Papel de Axe"
+                    className="max-h-full w-auto object-contain"
+                    width={260}
+                    height={195}
+                    sizes="(max-width: 1024px) 100vw, 26vw"
+                    src="/imagens/Imagem_1.png"
+                  />
                   </div>
                 </article>
               </div>
@@ -138,7 +111,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="pb-10">
+      <section className="pt-0 pb-10">
         <div className="shell grid gap-4 md:grid-cols-3">
           {valuePills.map((item) => (
             <article
