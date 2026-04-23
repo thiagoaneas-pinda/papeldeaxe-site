@@ -13,7 +13,7 @@ export function SiteHeader() {
               fill
               priority
               sizes="64px"
-              src="/imagens/LOGOTIPO Papel de Axe-04.jpg"
+              src="/imagens/logo-header.jpg"
             />
           </div>
           </a>
