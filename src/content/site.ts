@@ -1,4 +1,4 @@
-export const whatsappBase = "https://wa.me/5512991048292";
+export const whatsappBase = "https://wa.me/5512992095661";
 
 export const navItems = [
   { label: "Produtos", href: "#produtos" },
@@ -43,31 +43,41 @@ export const products = [
     tag: "Umbanda / Candomblé",
     badge: "Mais pedido",
     description:
-      "Um caderno pensado para registrar firmezas, obrigações, estudos e orientações com mais beleza e organização.",
+      "Um caderno pensado para registrar firmezas, oferendas, banhos, defumação, padês, com mais beleza e organização.",
     price: "R$ 79,90",
-    asset: "/imagens/MARCA D AGUAAtivo 3.png",
+    assets: [
+      "/imagens/caderno-firmeza-1.jpeg",
+      "/imagens/caderno-firmeza-2.jpeg",
+      "/imagens/caderno-firmeza-3.jpeg"
+    ],
     message:
       "Oi Papel de Axé! Quero saber mais sobre o Caderno de Firmeza e as opções de personalização.",
     features: [
-      "Capa com nome, casa ou orixá",
-      "Miolo pensado para uso recorrente",
-      "Ótimo para registros pessoais e da casa"
+      "Capa com seu nome, nome da sua casa, orixás, guias e entidades.",
+      "Miolo pensando para uso diário, com visão ampla e simples.",
+      "Ótimo para registrar cada detalhes das suas obrigações."
     ]
   },
   {
-    name: "Planner de gira",
+    name: "Caderno Personalizado",
     tag: "Organização",
     badge: "Personalizável",
     description:
-      "Planejamento delicado para acompanhar giras, escalas, estudos e compromissos com clareza no dia a dia.",
-    price: "R$ 99,90",
-    asset: "/imagens/MARCA D AGUAAtivo 12.png",
+      "Um caderno pensando para colocar todos os estudos, rezos, mandingas, orações, benzimentos, e tudo mais que estiver relacionado com sua espiritualidade.",
+    price: "R$ 59,90",
+    assets: [
+      "/imagens/caderno-personalizado-1.jpeg",
+      "/imagens/caderno-personalizado-2.jpeg",
+      "/imagens/caderno-personalizado-3.jpeg",
+      "/imagens/caderno-personalizado-4.jpeg",
+      "/imagens/caderno-personalizado-5.jpeg"
+    ],
     message:
-      "Oi Papel de Axé! Quero saber mais sobre o Planner de Gira e as opções de personalização.",
+      "Oi Papel de Axé! Quero saber mais sobre o Caderno Personalizado e as opções de personalização.",
     features: [
-      "Visão mensal e semanal",
-      "Espaço para anotações e observações",
-      "Ideal para rotina pessoal ou da casa"
+      "Capa com seu nome, nome de sua casa, orixá, guias, entidades, com imagens que fazem sentido para o seu Axé.",
+      "Miolo personalizável.",
+      "Ótimo para registros de tudo que a espiritualidade te intui e comunica."
     ]
   },
   {
@@ -87,19 +97,19 @@ export const products = [
     ]
   },
   {
-    name: "Bloco do terreiro",
+    name: "Bloco de Anotações (8x11cm)",
     tag: "Dia a dia",
     badge: "Uso coletivo",
     description:
-      "Blocos personalizados para recados, listas, atendimentos e anotações rápidas com identidade da casa.",
-    price: "R$ 39,90",
+      "Blocos pequenos e práticos para levar na bolsa, deixar na cabeceira de cama, para anotações rápidas e com propósito.",
+    price: "R$ 14,90",
     asset: "/imagens/MARCA D AGUAAtivo 7.png",
     message:
-      "Oi Papel de Axé! Quero saber mais sobre o Bloco do Terreiro personalizado.",
+      "Oi Papel de Axé! Quero saber mais sobre o Bloco de Anotações personalizado.",
     features: [
-      "Prático para uso cotidiano",
-      "Pode levar nome da casa ou identidade visual",
-      "Bom complemento para kits e encomendas"
+      "Capa totalmente personalizável, com nome de seus guias, orixás, imagens, e muito mais!",
+      "Miolo em folhas sem pauta, podendo também ser utilizado para desenhos e outros fundamentos.",
+      "Perfeito para lembrancinhas de batizado, casamento, saídas de santo e eventos em geral! "
     ]
   }
 ] as const;
@@ -129,9 +139,9 @@ export const aboutFeatures = [
 ] as const;
 
 export const contactDetails = [
-  { label: "WhatsApp", value: "(12) 99104-8292" },
+  { label: "WhatsApp", value: "(12) 99209-5661" },
   { label: "Instagram", value: "@papeldeaxe" },
-  { label: "Horário", value: "Comercial, horário de São Paulo" }
+  {/* label: "Horário", value: "Comercial, horário de São Paulo" */}
 ] as const;
 
 export function buildWhatsAppUrl(message: string) {

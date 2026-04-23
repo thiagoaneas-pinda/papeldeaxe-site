@@ -129,14 +129,14 @@ export default function Home() {
         <div className="shell space-y-12">
           <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
             <SectionHeading
-              description="Cada modelo parte de uma base autoral, mas pode ser adaptado para refletir sua historia, sua casa e o cuidado que voce quer transmitir."
-              eyebrow="Colecoes em destaque"
-              title="Produtos pensados para encantar a primeira vista e no uso diario."
+              description="Cada modelo parte de uma base autoral, mas pode ser adaptado para refletir sua história, sua casa e o cuidado que você quer transmitir."
+              eyebrow="Coleções em destaque"
+              title="Produtos pensados para encantar à primeira vista e no uso diário."
             />
             <aside className="premium-card rounded-[1.8rem] border border-deep/10 bg-white/70 p-6">
               <p className="text-sm uppercase tracking-[0.18em] text-deep/45">Quer algo exclusivo?</p>
               <p className="mt-3 text-base leading-8 text-deep/68">
-                Alem dos modelos em destaque, a marca tambem desenvolve composicoes
+                Além dos modelos em destaque, a marca também desenvolve composições
                 especiais para pedidos personalizados e presentes afetivos.
               </p>
             </aside>
@@ -153,10 +153,10 @@ export default function Home() {
       <section className="bg-[linear-gradient(135deg,rgba(31,24,78,0.98),rgba(48,36,101,0.96))] py-20 text-white sm:py-24" id="como-funciona">
         <div className="shell space-y-12">
           <SectionHeading
-            description="A encomenda foi organizada para facilitar a decisao, valorizar a personalizacao e passar seguranca em cada etapa."
+            description="A encomenda foi organizada para facilitar a decisão, valorizar a personalização e transmitir segurança em cada etapa."
             eyebrow="Como funciona"
             inverted
-            title="Um processo leve, claro e acolhedor do primeiro contato ate o pedido."
+            title="Um processo leve, claro e acolhedor do primeiro contato até o pedido."
           />
           <div className="grid gap-5 lg:grid-cols-3">
             {steps.map((step) => (
@@ -180,23 +180,23 @@ export default function Home() {
           <div className="space-y-5">
             <p className="section-kicker">Sobre a marca</p>
             <h2 className="max-w-4xl text-balance text-4xl font-semibold leading-[1.02] text-deep sm:text-[3.15rem]">
-              Uma papelaria que transforma cuidado, memoria e identidade em presenca visual.
+              Uma papelaria que transforma cuidado, memória e identidade em presenca visual.
             </h2>
             <p className="text-lg leading-8 text-deep/68">
-              A Papel de Axe nasceu para acolher historias, organizar vivencias e
-              celebrar a beleza de quem trilha caminhos na umbanda e no candomble.
-              Cada peca e desenvolvida com escuta, intencao e atencao aos detalhes.
+              A Papel de Axé nasceu para acolher histórias, organizar vivências e
+              celebrar a beleza de quem trilha caminhos na umbanda e no candomblé.
+              Cada peça é desenvolvida com escuta, intenção e atenção aos detalhes.
             </p>
             <p className="text-lg leading-8 text-deep/68">
-              O resultado e uma papelaria personalizada que une delicadeza,
+              O resultado é uma papelaria personalizada que une delicadeza,
               funcionalidade e percepcao premium, sem perder o toque artesanal e
-              afetivo que faz a marca ser reconhecivel.
+              afetivo que faz a marca ser reconhecível.
             </p>
           </div>
 
           <div className="grid gap-5">
             <article className="premium-card rounded-[1.9rem] border border-deep/10 bg-white/72 p-6">
-              <h3 className="text-2xl font-semibold text-deep">O que voce encontra aqui</h3>
+              <h3 className="text-2xl font-semibold text-deep">O que você encontra aqui</h3>
               <ul className="mt-5 grid gap-4 text-sm text-deep/78">
                 {aboutFeatures.map((feature) => (
                   <li className="flex gap-3" key={feature}>
@@ -209,15 +209,14 @@ export default function Home() {
             <article className="premium-card rounded-[1.9rem] border border-deep/10 bg-[linear-gradient(160deg,rgba(255,255,255,0.76),rgba(231,241,153,0.34))] p-6">
               <h3 className="text-2xl font-semibold text-deep">Para quem a marca faz sentido</h3>
               <p className="mt-4 text-sm leading-7 text-deep/68">
-                Filhos e filhas de santo, mediuns, dirigentes e casas de axe que
-                valorizam organizacao, beleza e pecas com significado.
+                Filhos e filhas de santo, médiuns, dirigentes e casas de axé que
+                valorizam organização, beleza e peças com significado.
               </p>
             </article>
           </div>
         </div>
       </section>
-
-      <SiteFooter />
+      
     </main>
   );
 }

@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import { buildWhatsAppUrl } from "@/content/site";
 
@@ -8,31 +11,99 @@ type ProductCardProps = {
     badge: string;
     description: string;
     price: string;
-    asset: string;
+    assets?: readonly string[];
+    asset?: string | readonly string[];
     message: string;
     features: readonly string[];
   };
 };
 
 export function ProductCard({ product }: ProductCardProps) {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  const images = (
+    Array.isArray(product.assets) && product.assets.length > 0
+      ? product.assets
+      : Array.isArray(product.asset) && product.asset.length > 0
+        ? product.asset
+        : typeof product.asset === "string" && product.asset
+          ? [product.asset]
+          : []
+  ).filter((img): img is string => Boolean(img && img.trim()));
+
+  const handlePrev = () => {
+    if (images.length <= 1) return;
+    setCurrentImage((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    if (images.length <= 1) return;
+    setCurrentImage((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
+
   return (
     <article className="premium-card flex h-full flex-col overflow-hidden rounded-[2rem] border border-deep/10 bg-white/70">
       <div className="relative min-h-[17rem] overflow-hidden bg-[linear-gradient(160deg,rgba(31,24,78,0.06),rgba(17,179,241,0.04))] p-6">
         <div className="absolute right-[-2.5rem] top-[-2rem] h-36 w-36 rounded-full bg-rose/10 blur-2xl" />
         <div className="absolute bottom-[-2rem] left-[-1rem] h-40 w-40 rounded-full bg-azure/10 blur-2xl" />
+
         <div className="relative mx-auto flex h-full max-w-[15rem] items-center justify-center rounded-[1.8rem] border border-white/60 bg-[linear-gradient(180deg,rgba(255,255,255,0.95),rgba(255,248,243,0.88))] p-5 shadow-[0_24px_30px_rgba(20,15,51,0.12)]">
-          <Image
-            alt={product.name}
-            className="h-auto w-full object-contain"
-            height={420}
-            src={product.asset}
-            width={320}
-          />
+          <div className="relative w-full">
+            {images.length > 0 && images[currentImage] ? (
+              <Image
+                alt={product.name}
+                className="h-auto w-full object-contain"
+                height={420}
+                src={images[currentImage]}
+                width={320}
+              />
+            ) : (
+              <div className="flex h-[420px] w-full items-center justify-center text-sm text-deep/40">
+                Imagem indisponível
+              </div>
+            )}
+
+            {images.length > 1 && (
+              <>
+                <button
+                  aria-label="Imagem anterior"
+                  className="absolute left-[-0.5rem] top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-lg font-bold text-deep shadow-md transition hover:scale-105"
+                  onClick={handlePrev}
+                  type="button"
+                >
+                  ‹
+                </button>
+
+                <button
+                  aria-label="Próxima imagem"
+                  className="absolute right-[-0.5rem] top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-lg font-bold text-deep shadow-md transition hover:scale-105"
+                  onClick={handleNext}
+                  type="button"
+                >
+                  ›
+                </button>
+
+                <div className="mt-4 flex justify-center gap-2">
+                  {images.map((_, index) => (
+                    <button
+                      aria-label={`Ir para imagem ${index + 1}`}
+                      className={`h-2.5 w-2.5 rounded-full transition ${
+                        currentImage === index ? "bg-deep" : "bg-deep/20"
+                      }`}
+                      key={index}
+                      onClick={() => setCurrentImage(index)}
+                      type="button"
+                    />
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
         </div>
       </div>
 
       <div className="flex flex-1 flex-col gap-5 p-6">
-        <div className="flex items-center justify-between gap-3">
+        <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
           <span className="rounded-full bg-deep/6 px-3 py-1 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-deep">
             {product.tag}
           </span>

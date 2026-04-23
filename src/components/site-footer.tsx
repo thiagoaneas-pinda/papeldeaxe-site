@@ -7,7 +7,7 @@ export function SiteFooter() {
       <a
         className="fixed bottom-4 right-4 z-40 inline-flex min-h-12 items-center justify-center rounded-full bg-[linear-gradient(135deg,#1db954,#17a74a)] px-6 py-3 text-sm font-semibold text-white shadow-[0_18px_36px_rgba(23,167,74,0.28)] transition hover:-translate-y-0.5 max-sm:left-4"
         href={buildWhatsAppUrl(
-          "Oi Papel de Axe! Quero fazer uma encomenda personalizada."
+          "Oi Papel de Axé! Quero fazer uma encomenda personalizada."
         )}
         rel="noreferrer"
         target="_blank"
@@ -30,12 +30,12 @@ export function SiteFooter() {
               </div>
             </div>
             <div className="space-y-4">
-              <p className="section-kicker">Contato e orcamento</p>
+              <p className="section-kicker">Contato e orçamento</p>
               <h2 className="max-w-2xl text-4xl font-semibold leading-[1.02] text-deep sm:text-[3rem]">
-                Vamos transformar sua ideia em uma peca bonita, personalizada e memoravel.
+                Vamos transformar sua ideia em uma peça bonita, personalizada e memorável.
               </h2>
               <p className="max-w-xl text-lg leading-8 text-deep/68">
-                Atendimento direto para alinhar personalizacao, valores, prazo e acabamento
+                Atendimento direto para alinhar personalização, valores, prazo e acabamento
                 com leveza e clareza.
               </p>
             </div>
@@ -45,19 +45,19 @@ export function SiteFooter() {
             <div className="space-y-5">
               <div className="relative h-16 w-[12.5rem] overflow-hidden rounded-2xl bg-white/10 p-2">
                 <Image
-                  alt="Marca Papel de Axe"
+                  alt="Marca Papel de Axé"
                   className="object-contain"
                   fill
                   sizes="200px"
                   src="/imagens/logo-completa.png"
                 />
               </div>
-              <p className="text-sm uppercase tracking-[0.24em] text-white/50">Proximo passo</p>
+              <p className="text-sm uppercase tracking-[0.24em] text-white/50">Próximo passo</p>
               <div className="grid gap-3">
                 <a
                   className="inline-flex min-h-12 items-center justify-center rounded-full bg-[linear-gradient(135deg,#11b3f1,#a61598,#e71f99)] px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5"
                   href={buildWhatsAppUrl(
-                    "Oi Papel de Axe! Quero fazer uma encomenda personalizada."
+                    "Oi Papel de Axé! Quero fazer uma encomenda personalizada."
                   )}
                   rel="noreferrer"
                   target="_blank"
