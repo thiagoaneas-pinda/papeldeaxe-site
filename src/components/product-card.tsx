@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { buildWhatsAppUrl } from "@/content/site";
+import { Lightbox } from "@/components/lightbox";
 
 type ProductCardProps = {
   product: {
@@ -20,6 +21,7 @@ type ProductCardProps = {
 
 export function ProductCard({ product }: ProductCardProps) {
   const [currentImage, setCurrentImage] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
 
   const images = (
     Array.isArray(product.assets) && product.assets.length > 0
@@ -42,6 +44,7 @@ export function ProductCard({ product }: ProductCardProps) {
   };
 
   return (
+  <>
     <article className="premium-card flex h-full flex-col overflow-hidden rounded-[2rem] border border-deep/10 bg-white/70">
       <div className="relative min-h-[17rem] overflow-hidden bg-[linear-gradient(160deg,rgba(31,24,78,0.06),rgba(17,179,241,0.04))] p-6">
         <div className="absolute right-[-2.5rem] top-[-2rem] h-36 w-36 rounded-full bg-rose/10 blur-2xl" />
@@ -50,13 +53,19 @@ export function ProductCard({ product }: ProductCardProps) {
         <div className="relative mx-auto flex h-full max-w-[15rem] items-center justify-center rounded-[1.8rem] border border-white/60 bg-[linear-gradient(180deg,rgba(255,255,255,0.95),rgba(255,248,243,0.88))] p-5 shadow-[0_24px_30px_rgba(20,15,51,0.12)]">
           <div className="relative w-full">
             {images.length > 0 && images[currentImage] ? (
-              <Image
-                alt={product.name}
-                className="h-auto w-full object-contain"
-                height={420}
-                src={images[currentImage]}
-                width={320}
-              />
+              <button
+                type="button"
+                onClick={() => setLightboxOpen(true)}
+                className="block w-full cursor-zoom-in"
+              >
+                <Image
+                  alt={product.name}
+                  className="h-auto w-full object-contain"
+                  height={420}
+                  src={images[currentImage]}
+                  width={320}
+                />
+              </button>
             ) : (
               <div className="flex h-[420px] w-full items-center justify-center text-sm text-deep/40">
                 Imagem indisponível
@@ -113,8 +122,12 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
 
         <div className="space-y-3">
-          <h3 className="text-2xl font-semibold leading-tight text-deep">{product.name}</h3>
-          <p className="text-sm leading-7 text-deep/68">{product.description}</p>
+          <h3 className="text-2xl font-semibold leading-tight text-deep">
+            {product.name}
+          </h3>
+          <p className="text-sm leading-7 text-deep/68">
+            {product.description}
+          </p>
         </div>
 
         <ul className="grid gap-3 text-sm text-deep/78">
@@ -128,9 +141,12 @@ export function ProductCard({ product }: ProductCardProps) {
 
         <div className="mt-auto flex items-end justify-between gap-4 border-t border-deep/8 pt-5">
           <div>
-            <p className="text-xs uppercase tracking-[0.18em] text-deep/45">A partir de</p>
+            <p className="text-xs uppercase tracking-[0.18em] text-deep/45">
+              A partir de
+            </p>
             <p className="text-2xl font-bold text-deep">{product.price}</p>
           </div>
+
           <a
             className="inline-flex min-h-11 items-center justify-center rounded-full bg-[linear-gradient(135deg,#11b3f1,#a61598,#e71f99)] px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5"
             href={buildWhatsAppUrl(product.message)}
@@ -142,5 +158,48 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
       </div>
     </article>
-  );
+
+    {lightboxOpen && images.length > 0 && images[currentImage] && (
+      <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/80 p-6">
+        <button
+          type="button"
+          onClick={() => setLightboxOpen(false)}
+          className="absolute right-6 top-6 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white text-2xl font-semibold text-deep shadow-lg"
+        >
+          ×
+        </button>
+
+        {images.length > 1 && (
+          <button
+            type="button"
+            aria-label="Imagem anterior"
+            onClick={handlePrev}
+            className="absolute left-6 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white text-3xl font-bold text-deep shadow-lg"
+          >
+            ‹
+          </button>
+        )}
+
+        <Image
+          alt={product.name}
+          className="max-h-[85vh] w-auto rounded-2xl object-contain shadow-2xl"
+          height={900}
+          src={images[currentImage]}
+          width={700}
+        />
+
+        {images.length > 1 && (
+          <button
+            type="button"
+            aria-label="Próxima imagem"
+            onClick={handleNext}
+            className="absolute right-6 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white text-3xl font-bold text-deep shadow-lg"
+          >
+            ›
+          </button>
+        )}
+      </div>
+    )}
+  </>
+);
 }

@@ -81,35 +81,35 @@ export const products = [
     ]
   },
   {
-    name: "Kit presente de axé",
+    name: "Pote de Mensagem dos Guias e Orixás",
     tag: "Presente afetivo",
     badge: "Sob medida",
     description:
-      "Uma composição especial para presentear com intenção, reunindo papelaria personalizada e acabamento caprichado.",
-    price: "R$ 149,90",
-    asset: "/imagens/MARCA D AGUAAtivo 2.png",
+      "Um produto diferenciado, onde as mensagens dos Guias e Orixás podem chegar até você ou a quem quiser presentear, de forma lúdica e fácil! Ideal para manter a conexão com a espiritualidade, diariamente, ou sempre que necessitar.",
+    price: "R$ 45,00",
+    asset: "/imagens/potemsg-1.jpeg",
     message:
-      "Oi Papel de Axé! Quero montar um Kit Presente de Axé personalizado.",
+      "Oi Papel de Axé! Quero montar um Pote de Mensagens personalizado.",
     features: [
-      "Montagem personalizada para a ocasião",
-      "Combinação de itens com identidade visual",
-      "Perfeito para surpreender com carinho"
+      "Lindo para presentes, lembranças e para ter em casa;",
+      "Mais de 300 mensagens variadas e para todos os momentos da vida;",
+      "Etiqueta totalmente personalizada, deixando você mais conectado com a sua espiritualidade."
     ]
   },
   {
-    name: "Bloco de Anotações (8x11cm)",
+    name: "Bloco de Anotações",
     tag: "Dia a dia",
     badge: "Uso coletivo",
     description:
       "Blocos pequenos e práticos para levar na bolsa, deixar na cabeceira de cama, para anotações rápidas e com propósito.",
     price: "R$ 14,90",
-    asset: "/imagens/MARCA D AGUAAtivo 7.png",
+    asset: "/imagens/bloco-1.jpeg",
     message:
       "Oi Papel de Axé! Quero saber mais sobre o Bloco de Anotações personalizado.",
     features: [
       "Capa totalmente personalizável, com nome de seus guias, orixás, imagens, e muito mais!",
       "Miolo em folhas sem pauta, podendo também ser utilizado para desenhos e outros fundamentos.",
-      "Perfeito para lembrancinhas de batizado, casamento, saídas de santo e eventos em geral! "
+      "Perfeito para lembrancinhas de batizado, casamento, saídas de santo e eventos em geral!  "
     ]
   }
 ] as const;
